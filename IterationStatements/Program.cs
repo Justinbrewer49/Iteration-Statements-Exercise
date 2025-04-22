@@ -8,7 +8,7 @@ namespace IterationStatements
         // LukeWarm Section: Implement the following methods        
         // 1. Write a method that prints all numbers from 1000 down to -1000 to the console.
         //    - Method Signature: void PrintNumbers()
-        static void PrintNumbers()
+        public static void PrintNumbers()
         {
             for (int i = 1000; i >= -1000; i--)
             {
@@ -17,7 +17,7 @@ namespace IterationStatements
         }
         // 2. Write a method that prints every third number from 3 to 999 to the console.
         //    - Method Signature: void PrintEveryThirdNumber()
-        static void PrintEveryThirdNmber()
+        public static void PrintEveryThirdNmber()
         {
             for (int i = 3; i <= 999; i += 3)
             {
@@ -27,15 +27,16 @@ namespace IterationStatements
         // 3. Write a method that accepts two integers as parameters and checks whether they are equal.
         //    - Method Signature: bool AreNumbersEqual(int num1, int num2)
         //    - Returns true if the numbers are equal, false otherwise.
-        bool AreNUbersEqual(int num1, int num2)
+        public static void AreNubersEqual(int num1, int num2)
         {
             if (num1 == num2)
             {
-                return true;
+                Console.WriteLine("The numbers are equal");
+
             }
             else
             { 
-                return false; 
+                Console.WriteLine("The numbers are not equal");
             
             }
         }
@@ -67,7 +68,7 @@ namespace IterationStatements
             }
             else
             { 
-                return false;
+               Console.WriteLine("The number is negative");
             
             }
         }
@@ -79,17 +80,17 @@ namespace IterationStatements
         //    - Hint: Use `int.Parse()` or the safer `int.TryParse()` for extra practice in handling user input.
         public static void CanVote()
         {
-            Console.WriteLine($:"Enter your age:");
-            var canparse = int.TryParse(Console.ReadLine(), out int userage);
+            Console.WriteLine("Enter your age:");
+            var input = Console.ReadLine();
+            var success = int.TryParse(input, out int age);
 
-            while (canparse == false)
+            while (!success)
         {
-                Console.WriteLine("please enter valid age");
-                canparse = int.TryParse($:Console.ReadLine(), out userage);
+                Console.WriteLine("Please enter a valid age:");
+                success = int.TryParse(Console.ReadLine(), out age);
             }
 
-
-            if (userage >= 18)
+            if (age >= 18)
             {
                 Console.WriteLine("You are eligible to vote");
         }
@@ -101,26 +102,23 @@ namespace IterationStatements
 
        
         
-        // Heatin' Up Section:
-        // 1. Write a method that checks if an integer (provided by the user) is within the range of -10 to 10.
-        //    - Method Signature: bool IsInRange(int number)
-        //    - Returns true if the number is within the range, false otherwise.
-bool IsInRange(int number)
+        // Fixed the `IsInRange` method to return a boolean value instead of using an invalid statement.
+        public static bool IsInRange(int number)
 {
     if (number >= -10 && number <= 10)
             {
-                return true;
+                Console.WriteLine("is in range"); return false;
             }
     else
             {
-                return false;
+                Console.WriteLine("is not in range"); return true;
             }
 }
         
         // 2. Write a method that displays the multiplication table (from 1 to 12) for a given integer.
         //    - Method Signature: void DisplayMultiplicationTable(int number)
         //    - Should print each line in the format: "1 * number = result"
-        void DisplayMultiplecationTable(int Number)
+       public static void DisplayMultiplecationTable(int Number)
         {
             for (int i = 1; i <= 12; i++)
             {
@@ -133,8 +131,14 @@ bool IsInRange(int number)
         // Use various test cases to ensure they work as expected.        
         static void Main(string[] args)
         {
-            
-            
+            //  PrintNumbers();
+            // PrintEveryThirdNmber();
+            // AreNubersEqual(5, 3);
+            //IsEven(5);
+            //ispositive(-109);
+            //CanVote();
+            //IsInRange(12);
+            //DisplayMultiplecationTable(12);
         }
     }   
 }
