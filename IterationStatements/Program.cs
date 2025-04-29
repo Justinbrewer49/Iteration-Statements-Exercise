@@ -27,17 +27,17 @@ namespace IterationStatements
         // 3. Write a method that accepts two integers as parameters and checks whether they are equal.
         //    - Method Signature: bool AreNumbersEqual(int num1, int num2)
         //    - Returns true if the numbers are equal, false otherwise.
-        public static void AreNubersEqual(int num1, int num2)
+        public static bool AreNumbersEqual(int num1, int num2)
         {
             if (num1 == num2)
             {
                 Console.WriteLine("The numbers are equal");
-
+                return true; 
             }
             else
             { 
                 Console.WriteLine("The numbers are not equal");
-            
+                return false;
             }
         }
         
@@ -102,7 +102,7 @@ namespace IterationStatements
 
        
         
-        // Fixed the `IsInRange` method to return a boolean value instead of using an invalid statement.
+        
         public static bool IsInRange(int number)
 {
     if (number >= -10 && number <= 10)
