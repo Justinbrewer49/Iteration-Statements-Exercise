@@ -44,32 +44,34 @@ namespace IterationStatements
         // 4. Write a method that checks if a given number is even or odd.
         //    - Method Signature: bool IsEven(int number)
         //    - Returns true if the number is even, false if odd.
-        public static void IsEven(int number)
+        public static bool IsEven(int number)
         {
             if (number % 2 == 0)
             { 
                 Console.WriteLine("The number is even");
+                return true;
             }
             else
             {
                 Console.WriteLine("The number is odd");
+                return false;
             }
         }
 
         
         //    - Method Signature: bool IsPositive(int number)
         //    - Returns true if the number is positive, false if negative.
-        public static void ispositive(int number)
+        public static bool IsPositive(int number)
         {
             if (number > 0)
             {
                Console.WriteLine("The number is positive");
-            
+                return true;
             }
             else
             { 
                Console.WriteLine("The number is negative");
-            
+                return false;
             }
         }
 
@@ -78,7 +80,7 @@ namespace IterationStatements
         //    - Method Signature: bool CanVote(int age)
         //    - Returns true if the candidate can vote, false otherwise.
         //    - Hint: Use `int.Parse()` or the safer `int.TryParse()` for extra practice in handling user input.
-        public static void CanVote()
+        public static bool CanVote()
         {
             Console.WriteLine("Enter your age:");
             var input = Console.ReadLine();
@@ -93,10 +95,12 @@ namespace IterationStatements
             if (age >= 18)
             {
                 Console.WriteLine("You are eligible to vote");
+                return true;
         }
             else
         {
                 Console.WriteLine("You are not eligible to vote");
+                return false;
             }
     }
 
@@ -132,8 +136,8 @@ namespace IterationStatements
         static void Main(string[] args)
         {
             //  PrintNumbers();
-            // PrintEveryThirdNmber();
-            // AreNubersEqual(5, 3);
+            //PrintEveryThirdNmber();
+            // AreNumbersEqual(5, 3);
             //IsEven(5);
             //ispositive(-109);
             //CanVote();
